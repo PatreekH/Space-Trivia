@@ -27,11 +27,11 @@ body{
 
 .answer{
 	margin-top: 5%;
-	margin-right: 5%;
 	float: right;
-	height: 25%;
-	width: 15%;
+	height: 13%;
+	width: 30%;
 	margin-right: 25%;
+	margin-bottom: 5%;
 }
 
 .answer div:hover{
@@ -55,10 +55,10 @@ body{
 }
 
 .answer2{
-	margin-top: 5%;
+	margin-right: 25%;
 	float: right;
-	height: 25%;
-	width: 15%;
+	height: 13%;
+	width: 30%;
 }
 
 .ans2{
