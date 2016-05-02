@@ -25,14 +25,27 @@
 		<button class="blastoff">Blast off!</button>
 	</div>
 
+	<div class="timer invsDiv">
+		<p>Time remaining: </p><span class="timeLeft"></span> 
+	</div>
 
 	<div class="question invsDiv">
 		<!--Question goes here-->
 	</div>
 
 
-	<div class="result invsDiv">
+	<div class="correctGuess invsDiv">
 		<p>Correct</p>
+	</div>
+
+	<div class="incorrectGuess invsDiv">
+		<p>Incorrect</p>
+	</div>
+
+	<div class="timeOut invsDiv">
+		<p>You have run out of time!</p>
+		<br>
+		<p>The correct answer is: </p>
 	</div>
 
 </div>
@@ -41,19 +54,19 @@
 	<div class="answer">
 	<!--Answer 1-->
 		<div class="allAns">
-			<p class="ansFade ansAttr" id="ans1"></p>
+			<p class="ansFade ansAttr otherAns" id="ans1"></p>
 		</div>
 	<!--Answer 2-->
 		<div class="allAns">
-			<p class="ansFade ansAttr" id="ans2"></p>
+			<p class="ansFade ansAttr otherAns" id="ans2"></p>
 		</div>
 	<!--Answer 3-->
 		<div class="allAns">
-			<p class="ansFade ansAttr" id="ans3"></p>
+			<p class="ansFade ansAttr otherAns" id="ans3"></p>
 		</div>
 	<!--Answer 4-->
 		<div class="allAns">
-			<p class="ansFade ansAttr" id="ans4"></p>
+			<p class="ansFade ansAttr otherAns" id="ans4"></p>
 		</div>
 
 	</div>
