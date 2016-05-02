@@ -1,5 +1,6 @@
 body{
-	background-color: grey;
+	background-image: url(../images/bg.jpg);
+	background-repeat: 0;
 	background-repeat: no-repeat;
 	background-size: 100%, 100%;
 }
@@ -31,7 +32,7 @@ body{
 .title{
 	background-color: white;
 	height: 10%;
-	width: 50%;
+	width: 77%;
 	margin-left: 8%;
 }
 
@@ -39,9 +40,9 @@ body{
 	background-color: white;
 	border-style: solid;
 	border-color: black;
-	height: 60.8%;
-	width: 50%;
-	margin-top: 10%;
+	height: 60%;
+	width: 37%;
+	margin-top: 5%;
 	margin-left: 8%;
 	float: left;
 }
@@ -55,11 +56,11 @@ body{
 }
 
 .answer{
-	margin-top: 10%;
+	margin-top: 5%;
 	float: right;
-	height: 15.2%;
+	height: 15%;
 	width: 30%;
-	margin-right: 10%;
+	margin-right: 15%;
 	margin-bottom: 5%;
 }
 
