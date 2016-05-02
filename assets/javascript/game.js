@@ -5,15 +5,15 @@
 
 $(document).ready(function() {
 
-	var answer1 = "Q1:A1";
-	var answer2 = "Q1:A2";
-	var answer3 = "Q1:A3";
-	var answer4 = "Q1:A4";
+	var answer1 = "This is Answer 1";
+	var answer2 = "This is Answer 2";
+	var answer3 = "This is Answer 3";
+	var answer4 = "This is Answer 4";
 	var textTimer;
 
 
 	var textFade = function(){
-		$(".ansFade").fadeIn(1500);
+		$(".ansFade").fadeIn(1000);
 	};
 
 
@@ -21,19 +21,19 @@ $(document).ready(function() {
 
 		$(".ansFade").hide();
 
-		$(".allAns").animate({width: "100%", height: "100%"}, 1500);
+		$(".allAns").animate({width: "100%", height: "100%"}, 1000);
 		$(".allAns").css("background-color", "white");
-		$(".allAns").css("border-style", "solid");
-		$(".allAns").css("border-color", "black");
 
 		$("#ans1").html(answer1);
 		$("#ans2").html(answer2);
 		$("#ans3").html(answer3);
 		$("#ans4").html(answer4);
 		
-		textTimer = setTimeout(textFade, 2000);
+		textTimer = setTimeout(textFade, 1500);
 
    		$(".blastoff").addClass("invsDiv");
+   		$(".bodiv").addClass("invsDiv");
+   		$(".startText").addClass("invsDiv");
    		$(".question").removeClass("invsDiv");
 	});
 

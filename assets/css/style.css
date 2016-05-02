@@ -4,21 +4,44 @@ body{
 	background-size: 100%, 100%;
 }
 
+.bodiv{
+	text-align: center;
+}
+
+.blastoff {
+	margin-top: 10%;
+	text-align: center;
+	border: 2px solid red;
+	background-color: red;
+	color: white;
+	padding: 15px 32px;
+	font-size: 26px;
+	-webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.blastoff:hover{
+	background-color: white;
+	color: red;
+	box-shadow: 0 12px 16px 0 red;
+	
+
+}
 
 .title{
 	background-color: white;
 	height: 10%;
-	width: 82%;
-	margin-left: 7.5%;
+	width: 50%;
+	margin-left: 8%;
 }
 
 .mainDiv{
 	background-color: white;
 	border-style: solid;
 	border-color: black;
-	height: 60%;
+	height: 60.8%;
 	width: 50%;
-	margin-top: 5%;
+	margin-top: 10%;
 	margin-left: 8%;
 	float: left;
 }
@@ -27,33 +50,29 @@ body{
 	text-align: center;
 }
 
+.ansAttr{
+	padding: 10%;
+}
+
 .answer{
-	margin-top: 5%;
+	margin-top: 10%;
 	float: right;
-	height: 15%;
+	height: 15.2%;
 	width: 30%;
 	margin-right: 10%;
 	margin-bottom: 5%;
 }
 
 .answer div:hover{
-	-webkit-transform:scale(2); 
-    -moz-transform:scale(2); 
-    -ms-transform:scale(2); 
-    -o-transform:scale(2); 
-     transform:scale(1.2);
-     z-index: +10;
-     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.answer2 div:hover{
-	-webkit-transform:scale(2); 
-    -moz-transform:scale(2); 
-    -ms-transform:scale(2); 
-    -o-transform:scale(2); 
-     transform:scale(1.2);
-     z-index: +10;
-     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	-webkit-transform:scale(1.2); 
+    -moz-transform:scale(1.2); 
+    -ms-transform:scale(1.2); 
+    -o-transform:scale(1.2); 
+    transform:scale(1.1);
+    z-index: +10;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 
