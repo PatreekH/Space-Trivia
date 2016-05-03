@@ -53,25 +53,81 @@ $(document).ready(function() {
 		$(".timer").removeClass("invsDiv");
 		$(".correctguess").addClass("invsDiv");
 		$(".incorrectguess").addClass("invsDiv");
+		$(".timeOut").addClass("invsDiv");
 
-		var userguess2;
 		var q2 = "this is question 2";
 		var q2a1 = "This is Answer 1";
 		var q2a2 = "This is Answer 2";
 		var q2a3 = "This is Answer 3";
 		var q2a4 = "This is Answer 4";
-		var userguess3;
 		var q3 = "this is question 3";
 		var q3a1 = "This is Answer 1";
 		var q3a2 = "This is Answer 3";
 		var q3a3 = "This is Answer 3";
 		var q3a4 = "This is Answer 4";
+		var q4 = "this is question 4";
+		var q4a1 = "This is Answer 1";
+		var q4a2 = "This is Answer 3";
+		var q4a3 = "This is Answer 3";
+		var q4a4 = "This is Answer 4";
+		var q5 = "this is question 5"
+		var q5a1 = "This is Answer 1";
+		var q5a2 = "This is Answer 3";
+		var q5a3 = "This is Answer 3";
+		var q5a4 = "This is Answer 4";
+		var q6 = "this is question 6";
+		var q6a1 = "This is Answer 1";
+		var q6a2 = "This is Answer 3";
+		var q6a3 = "This is Answer 3";
+		var q6a4 = "This is Answer 4";
+		var q7 = "this is question 7";
+		var q7a1 = "This is Answer 1";
+		var q7a2 = "This is Answer 3";
+		var q7a3 = "This is Answer 3";
+		var q7a4 = "This is Answer 4";
+		var q8 = "this is question 4";
+		var q8a1 = "This is Answer 8";
+		var q8a2 = "This is Answer 3";
+		var q8a3 = "This is Answer 3";
+		var q8a4 = "This is Answer 4";
+		var q9 = "this is question 9";
+		var q9a1 = "This is Answer 1";
+		var q9a2 = "This is Answer 3";
+		var q9a3 = "This is Answer 3";
+		var q9a4 = "This is Answer 4";
+		var q10 = "this is question 10";
+		var q10a1 = "This is Answer 1";
+		var q10a2 = "This is Answer 3";
+		var q10a3 = "This is Answer 3";
+		var q10a4 = "This is Answer 4";
 
-		var question2 = new question(q2, q2a1, q2a2, q2a3, q2a4, "#ans3", userguess2);
-		//var question3 = new question(q3, q3a1, q3a2, q3a3, q3a4, "#ans3", userguess3);
+		var questionCounter = function(){
+
+			var questionCount = -2;
+			questionCount + 1;
+
+			var questionbank = [
+			new question(q2, q2a1, q2a2, q2a3, q2a4, "#ans3"),
+			new question(q3, q3a1, q3a2, q3a3, q3a4, "#ans2"),
+			new question(q4, q4a1, q4a2, q4a3, q4a4, "#ans1"),
+			new question(q5, q5a1, q5a2, q5a3, q5a4, "#ans1"),
+			new question(q6, q6a1, q6a2, q6a3, q6a4, "#ans4"),
+			new question(q7, q7a1, q7a2, q7a3, q7a4, "#ans2"),
+			new question(q8, q8a1, q8a2, q8a3, q8a4, "#ans3"),
+			new question(q9, q9a1, q9a2, q9a3, q9a4, "#ans2"),
+			new question(q10, q10a1, q10a2, q10a3, q10a4, "#ans4")
+			];
+
+			for (i = -1; questionCount = questionbank[i]; i + 1){
+				questionbank[i];
+				//or .join [i] to question "new question(question[i])"?
+			}
+		}
+
+		questionCounter();
 	}
 
-	var question = function(q, a1, a2, a3, a4, correct, userguess){
+	var question = function(q, a1, a2, a3, a4, correct){
 
 		this.q = q;
 		this.a1 = a1;
@@ -79,11 +135,10 @@ $(document).ready(function() {
 		this.a3 = a3;
 		this.a4 = a4;
 		this.correct = correct;
-		this.userguess = userguess;
 
 		var correctguess;
 		secondsLeft = 32;
-		userguess = false;
+		var userguess = false;
 
 		var qTimeDecrement = function(){
 
@@ -108,6 +163,9 @@ $(document).ready(function() {
 			$(".question").addClass("invsDiv");
    			$(".timer").addClass("invsDiv");
    			$(".timeOut").removeClass("invsDiv");
+			userguess = true;
+   			guessCheckTimer();
+   			//clearInterval(interv);
 		}
 
 		qTimeDecrement();
