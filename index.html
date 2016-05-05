@@ -26,13 +26,18 @@
 	</div>
 
 	<div class="timer invsDiv">
-		<p>Time remaining: </p><span class="timeLeft"></span> 
+		<span>Time remaining: </span><span class="timeLeft"></span> 
 	</div>
 
 	<div class="question invsDiv">
 		<!--Question goes here-->
 	</div>
 
+	<div class="endDisplay invsDiv">
+	<span>You got </span><span class="numCorrect"></span><span>/5 correct!</span>
+	<br>
+	<p>Click here to play again!</p><button>Restart</button> 
+	</div>
 
 	<div class="correctGuess invsDiv">
 		<p>Correct</p>
@@ -54,25 +59,25 @@
 	<div class="answer">
 	<!--Answer 1-->
 		<div class="allAns">
-			<p class="ansFade ansAttr otherAns" id="ans1"></p>
+			<p class="ansFade ansAttr ans" id="ans1" data-index="1"></p>
 		</div>
 	<!--Answer 2-->
 		<div class="allAns">
-			<p class="ansFade ansAttr otherAns" id="ans2"></p>
+			<p class="ansFade ansAttr ans" id="ans2" data-index="2"></p>
 		</div>
 	<!--Answer 3-->
 		<div class="allAns">
-			<p class="ansFade ansAttr otherAns" id="ans3"></p>
+			<p class="ansFade ansAttr ans" id="ans3" data-index="3"></p>
 		</div>
 	<!--Answer 4-->
 		<div class="allAns">
-			<p class="ansFade ansAttr otherAns" id="ans4"></p>
+			<p class="ansFade ansAttr ans" id="ans4" data-index="4"></p>
 		</div>
 
 	</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.2.3.js" type="text/javascript"></script>
-<script src="assets/javascript/game.js" type="text/javascript"></script>
+<script src="assets/javascript/app.js" type="text/javascript"></script>
 </body>
 </html>
