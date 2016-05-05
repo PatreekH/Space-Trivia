@@ -42,6 +42,7 @@ $(document).ready(function() {
 			}
 		],
 		blastButton: $(".blastoff"),
+		reset: $(".reset"),
 		ansFade: $(".ansFade"),
 		question: $(".question"),
 		timer: $(".timer"),
@@ -71,23 +72,18 @@ $(document).ready(function() {
 			trivia.textTimer = setTimeout(trivia.textFade, 1500);
 		},
 
-
 		textFade: function(){
 			trivia.ansFade.fadeIn(1000);
 			trivia.question.fadeIn(1000);
 			trivia.timer.fadeIn(1000);
 		},
 
-
 		blastOff: function(){
-
 			trivia.ansFade.hide();
 			trivia.question.hide();
 			trivia.timer.hide();
-
 			this.allAns.animate({width: "100%", height: "100%"}, 1000);
 			this.allAns.css("background-color", "white");
-
 			//$(".mainDiv").animate({width: "100%", height: "100%"}, 1000);
 			//$(".mainDiv").css("background-color", "white");
 			this.ans.addClass("ansAttr");
@@ -96,10 +92,8 @@ $(document).ready(function() {
    			this.startText.addClass("invsDiv");
    			trivia.question.removeClass("invsDiv");
    			trivia.timer.removeClass("invsDiv");
-
    			trivia.textFadeDelay();
    			trivia.newQuestion();
-
 		},
 
 		newQuestion: function(){
@@ -139,11 +133,10 @@ $(document).ready(function() {
 			trivia.timer.addClass("invsDiv");
 			trivia.timeOut.removeClass("invsDiv");
 			trivia.fiveSecondTimer();
+			if (trivia.currentQ == 5){
+				trivia.finalFiveSecondTimer();
+			}
 		},
-
-		//timeStop: function(){
-		 	//clearInterval(trivia.interv);
-		//},
 
 		fiveSecondTimer: function(){
 			trivia.finalfiveSec = setTimeout(trivia.questionAnswerd, 5000);
@@ -171,6 +164,13 @@ $(document).ready(function() {
    			trivia.timer.addClass("invsDiv");
    			trivia.endDisplay.removeClass("invsDiv");
    			trivia.numCorrect.html(trivia.ansCorrect);
+		},
+
+		resetGame: function(){
+			this.currentQ = 0;
+			this.numCorrect = 0;
+			this.blastOff();
+			this.endDisplay.addClass("invsDiv");
 		}
 
 
@@ -259,6 +259,11 @@ $(document).ready(function() {
 	trivia.blastButton.on("click", function(){
 		trivia.blastOff();
 	});
+
+	trivia.reset.on("click", function(){
+		trivia.resetGame();
+	});
+
 
 });
 
