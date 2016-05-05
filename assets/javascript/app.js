@@ -6,7 +6,7 @@ $(document).ready(function() {
 		qNas:
 		[
 			{
-			q: "What is closest planet to the Sun",
+			q: "What is closest planet to the Sun?",
 			a1: "Mercury",
 			a2: "Venus",
 			a3: "Neptune",
@@ -90,7 +90,7 @@ $(document).ready(function() {
 
 			//$(".mainDiv").animate({width: "100%", height: "100%"}, 1000);
 			//$(".mainDiv").css("background-color", "white");
-	
+			this.ans.addClass("ansAttr");
    			this.blastButton.addClass("invsDiv");
    			this.bodiv.addClass("invsDiv");
    			this.startText.addClass("invsDiv");
@@ -160,6 +160,7 @@ $(document).ready(function() {
 		finalFiveSecondTimer: function(){
 			trivia.fiveSec = setTimeout(trivia.endOfGame, 5000);
 			clearInterval(trivia.interv);
+			trivia.ans.addClass("invsDiv");
 		},
 
 		endOfGame: function(){
@@ -175,6 +176,10 @@ $(document).ready(function() {
 
 	};
 
+//for user pick run function that keeps users pick hovered on click with green or red border
+//if answer is wrong, have users pick be red, then show "the correct answer is..3..2..1 -show answer-
+//and highlight and hover correct answer in green
+//on click restart button set counter to 0 and then call new question
 
 	trivia.ans.on("click", function(){
 		var indexNum = $(this).data("index");

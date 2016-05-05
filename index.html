@@ -1,7 +1,9 @@
 <html>
 <head>
-	<title>Patrick Hernandez | RPG game</title>
+	<title>Patrick Hernandez | Space Trivia</title>
 	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
@@ -12,7 +14,7 @@
 
 
 <div class="title">
-<center>Space Trivia</center>
+<p>SpaceTrivia</p>
 </div>
 
 <div class="mainDiv">
@@ -34,9 +36,13 @@
 	</div>
 
 	<div class="endDisplay invsDiv">
-	<span>You got </span><span class="numCorrect"></span><span>/5 correct!</span>
-	<br>
-	<p>Click here to play again!</p><button>Restart</button> 
+		<div class="endnum">
+			<span>You got </span><span class="numCorrect"></span><span>/5 correct!</span>
+		</div>
+		<div class="playagain">
+			<p>Click here to play again!</p>
+		</div>
+		<button>Restart</button>
 	</div>
 
 	<div class="correctGuess invsDiv">
@@ -59,19 +65,19 @@
 	<div class="answer">
 	<!--Answer 1-->
 		<div class="allAns">
-			<p class="ansFade ansAttr ans" id="ans1" data-index="1"></p>
+			<p class="ansFade ans" id="ans1" data-index="1"></p>
 		</div>
 	<!--Answer 2-->
 		<div class="allAns">
-			<p class="ansFade ansAttr ans" id="ans2" data-index="2"></p>
+			<p class="ansFade ans" id="ans2" data-index="2"></p>
 		</div>
 	<!--Answer 3-->
 		<div class="allAns">
-			<p class="ansFade ansAttr ans" id="ans3" data-index="3"></p>
+			<p class="ansFade ans" id="ans3" data-index="3"></p>
 		</div>
 	<!--Answer 4-->
 		<div class="allAns">
-			<p class="ansFade ansAttr ans" id="ans4" data-index="4"></p>
+			<p class="ansFade ans" id="ans4" data-index="4"></p>
 		</div>
 
 	</div>

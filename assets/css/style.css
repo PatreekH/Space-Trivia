@@ -12,7 +12,7 @@ body{
 .blastoff {
 	margin-top: 10%;
 	text-align: center;
-	border: 2px solid red;
+	border: none;
 	background-color: red;
 	color: white;
 	padding: 15px 32px;
@@ -24,20 +24,29 @@ body{
 .blastoff:hover{
 	background-color: white;
 	color: red;
-	box-shadow: 0 12px 16px 0 red;
+	box-shadow: 0 0px 0px 16px red;
 	
 
 }
 
 .title{
-	background-color: white;
+	background-image: url(../images/space.jpg);
 	height: 10%;
-	width: 77%;
-	margin-left: 8%;
+	width: 100%;
+}
+
+.title p{
+	float: left;
+	font-family: 'Orbitron', sans-serif;
+	color: white;
+	font-size: 67px;
+	margin-left: .5%;
 }
 
 .mainDiv{
-	background-color: white;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	color: white;
+	background-image: url(../images/space.jpg);
 	height: 60%;
 	width: 37%;
 	margin-top: 5%;
@@ -45,8 +54,73 @@ body{
 	float: left;
 }
 
-.allAns{
+.startText{
+	margin-top: 10%;
+	margin-bottom: 10%;
 	text-align: center;
+	font-size: 35px;
+	
+}
+
+.allAns{
+	background-image: url(../images/space.jpg);
+	font-family: 'Ubuntu Condensed', sans-serif;
+	color: white;
+	font-size: 25px;
+	text-align: center;
+}
+
+.question{
+	margin-top: 10%;
+	text-align: center;
+	font-size: 25px;
+	background-color: black;
+	padding-left: 6%;
+	padding-right: 6%;
+}
+
+.timeOut{
+	margin-top: 10%;
+	text-align: center;
+	font-size: 25px;
+}
+
+.endDisplay{
+	margin-top: 10%;
+	text-align: center;
+	font-size: 25px;
+}
+
+.endnum{
+	margin-bottom: 5%;
+}
+
+.playagain{
+	margin-bottom: 5%;
+}
+
+.correctGuess{
+	margin-top: 20%;
+	text-align: center;
+	font-size: 25px;
+	background-color: black;
+	padding-left: 6%;
+	padding-right: 6%;
+}
+
+.incorrectGuess{
+	margin-top: 20%;
+	text-align: center;
+	font-size: 25px;
+	background-color: black;
+	padding-left: 6%;
+	padding-right: 6%;
+}
+
+.timer{
+	font-size: 25px;
+	margin-top: 6%;
+	margin-left: 6%;
 }
 
 .ansAttr{
