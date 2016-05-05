@@ -1,8 +1,9 @@
 $(document).ready(function() {
 
-
+//Object that holds variables and functions
 	var trivia =
 	{
+	//Quesstions and Answers:
 		qNas:
 		[
 			{
@@ -41,6 +42,7 @@ $(document).ready(function() {
 			a4: "The LA Galaxy"
 			}
 		],
+	//Variables:
 		blastButton: $(".blastoff"),
 		reset: $(".reset"),
 		ansFade: $(".ansFade"),
@@ -67,11 +69,11 @@ $(document).ready(function() {
 		textTimer: 0,
 		fiveSec: 0,
 		finalfiveSec: 0,
-
+	//Sets text fade delay to allow answers div animation to run first
 		textFadeDelay: function(){
 			trivia.textTimer = setTimeout(trivia.textFade, 1500);
 		},
-
+	//Fades in text after answer div animation is done
 		textFade: function(){
 			trivia.ansFade.fadeIn(1000);
 			trivia.question.fadeIn(1000);
@@ -79,29 +81,35 @@ $(document).ready(function() {
 		},
 
 		blastOff: function(){
+	//Before the answers div animation happens; question, timer and answers are hidden in the main div
 			trivia.ansFade.hide();
 			trivia.question.hide();
 			trivia.timer.hide();
+	//Animates the answers div
 			this.allAns.animate({width: "100%", height: "100%"}, 1000);
 			this.allAns.css("background-color", "white");
-			//$(".mainDiv").animate({width: "100%", height: "100%"}, 1000);
-			//$(".mainDiv").css("background-color", "white");
+	//Adds CSS to the answers div
 			this.ans.addClass("ansAttr");
+	//Gives the start game prompt a "display:none" class to make it disappear and removes the same class from the question, timer and answers divs to make them appear
    			this.blastButton.addClass("invsDiv");
    			this.bodiv.addClass("invsDiv");
    			this.startText.addClass("invsDiv");
    			trivia.question.removeClass("invsDiv");
    			trivia.timer.removeClass("invsDiv");
+   	//Causes text fade in to happen after animation runs, runs newQuestion
    			trivia.textFadeDelay();
    			trivia.newQuestion();
 		},
-
 		newQuestion: function(){
+	//Makes divs: question, timer and answers visable after a new question is asked
 			this.question.removeClass("invsDiv");
    			this.timer.removeClass("invsDiv");
+   			this.endDisplay.addClass("invsDiv");
    			this.incorrectguess.addClass("invsDiv");
    			this.correctguess.addClass("invsDiv");
+   	//Resets timer
    			this.secondsLeft = 30;
+   	//Loops through questions after each answer, adding 1 to currentQ everytime a new question is asked
 			this.currentQ++;
 			for (i = 0; this.currentQ > i; i++){
 				this.question.html(this.qNas[i].q);
@@ -110,16 +118,15 @@ $(document).ready(function() {
 				this.ans3.html(this.qNas[i].a3);
 				this.ans4.html(this.qNas[i].a4);
 			}
+	//Runs the timer per question
 			trivia.qTimeDecrement();
 			trivia.qTimer();
-			console.log(this.currentQ);
 		},
-
-
+	//Makes qTimer interval by 1 second
 		qTimeDecrement: function(){
 			trivia.interv = setInterval(trivia.qTimer, 1000);
 		},
-
+	//Makes secondsLeft go down 1 every 1 second
 		qTimer: function(){
 			trivia.secondsLeft--;
 			trivia.timeLeft.html(trivia.secondsLeft);
@@ -127,7 +134,7 @@ $(document).ready(function() {
 				trivia.qTimeUp();
 			}
 		},
-
+	//Displays time up page if time runs out
 		qTimeUp: function(){
 			trivia.question.addClass("invsDiv");
 			trivia.timer.addClass("invsDiv");
@@ -137,26 +144,27 @@ $(document).ready(function() {
 				trivia.finalFiveSecondTimer();
 			}
 		},
-
+	//Allows 5 seconds to display timeUp, correctGuess or incorrectGuess before newQuestion is run
 		fiveSecondTimer: function(){
-			trivia.finalfiveSec = setTimeout(trivia.questionAnswerd, 5000);
+			trivia.fiveSec = setTimeout(trivia.questionAnswerd, 5000);
 			clearInterval(trivia.interv);
 		},
-
+	//Resets the div so the next question can be prompt after 5 seconds
 		questionAnswerd: function(){
 			trivia.correctguess.addClass("invsDiv");
 			trivia.incorrectguess.addClass("invsDiv");
 			trivia.timeOut.addClass("invsDiv");
 			trivia.newQuestion();
 		},
-
+	//Allows 5 seconds before prompting the end of game.
 		finalFiveSecondTimer: function(){
-			trivia.fiveSec = setTimeout(trivia.endOfGame, 5000);
+			trivia.finalFiveSec = setTimeout(trivia.endOfGame, 5000);
 			clearInterval(trivia.interv);
 			trivia.ans.addClass("invsDiv");
 		},
-
+	//Shows the users stats after all the questions have been answered
 		endOfGame: function(){
+			clearInterval(trivia.finalFiveSec)
 			trivia.correctguess.addClass("invsDiv");
 			trivia.incorrectguess.addClass("invsDiv");
 			trivia.timeOut.addClass("invsDiv");
@@ -165,22 +173,28 @@ $(document).ready(function() {
    			trivia.endDisplay.removeClass("invsDiv");
    			trivia.numCorrect.html(trivia.ansCorrect);
 		},
-
+	//Resets the game after reset button has been clicked
 		resetGame: function(){
 			this.currentQ = 0;
-			this.numCorrect = 0;
-			this.blastOff();
-			this.endDisplay.addClass("invsDiv");
+			this.ansCorrect = 0;
+	//Fades out 'end of game' div
+			trivia.ans.fadeOut(1000);
+			trivia.endDisplay.fadeOut(1000);
+			trivia.resetDelayTimer();
+		},
+	//Sets delay before resetting game to allow 'end of game' div fadeOut to happen
+		resetDelayTimer: function(){
+			trivia.resetTimer = setTimeout(trivia.resetDelay, 1000);
+		},
+	//Resets the game after 1 second delay
+		resetDelay: function(){
+			trivia.endDisplay.addClass("invsDiv");
+			trivia.blastOff();
 		}
-
 
 	};
 
-//for user pick run function that keeps users pick hovered on click with green or red border
-//if answer is wrong, have users pick be red, then show "the correct answer is..3..2..1 -show answer-
-//and highlight and hover correct answer in green
-//on click restart button set counter to 0 and then call new question
-
+	//Grabs the data-index of the users answer pick and determines if it is the right or wrong answer based on what question is it (trivia.currentQ)
 	trivia.ans.on("click", function(){
 		var indexNum = $(this).data("index");
 		//Question 1
@@ -256,14 +270,18 @@ $(document).ready(function() {
 		//End of game
 	});
 
+//Blast Off button to start the game
 	trivia.blastButton.on("click", function(){
 		trivia.blastOff();
 	});
-
+//Reset button to reset the game
 	trivia.reset.on("click", function(){
 		trivia.resetGame();
 	});
 
+//Need to disable buttons
+//Add in correct answer if answer is wrong
+//Add in info if answer is correct
 
 });
 
