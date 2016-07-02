@@ -1,1 +1,3 @@
-# week-5-game
+# Space-Trivia
+
+A space themed trivia game built using Javascript and jQuery
